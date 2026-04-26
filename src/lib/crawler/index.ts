@@ -60,7 +60,7 @@ async function fetchPage(url: string): Promise<CrawledPage | null> {
       isJsRendered: detectJsRenderingIssue(rawHtml),
       finalUrl,
       redirectChain: [],
-      contentType: response.headers['content-type'] || '',
+      contentType: String(response.headers['content-type'] || ''),
     };
   } catch {
     return null;
